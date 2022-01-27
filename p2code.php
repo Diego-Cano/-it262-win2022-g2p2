@@ -37,7 +37,7 @@
 <div class="wrapper">
 
 <h1>Temperature Converter</h1>
-<form action="" method="post">
+<form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" method="post">
     <fieldset >
 
     <label for="temp">Enter The Temperature You Wish to Convert:</label>
@@ -62,12 +62,39 @@
     </fieldset>
 </form>
 
+<!-- START MAIN PHP BLOCK -->
+<?php
+
+if($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $errorMsg = "";
+    
+    // assign error messages
+
+    if(empty($_POST['unit_1']) && empty($_POST['unit_2']) ) { // if unit_1 and unit_2 are empty
+        $errorMsg .= '<span class="error">Select two units of measurement! <br></span>';
+    }
+    if(empty($_POST['unit_1']) && isset($_POST['unit_2'])) { // if unit_1 is empty and unit_2 is set
+        $errorMsg .= '<span class="error">Please select your unit of measurement! <br></span>';
+    }
+        
+    if(empty($_POST['unit_2']) && isset($_POST['unit_1'])) { // if unit_2 is empty and unit_1 is set
+        $errorMsg .= '<span class="error">What are we converting to? <br></span>';
+    }
+
+    if($_POST['temp'] === "") { // if temp is empty
+        $errorMsg .= '<span class="error">Please enter a temperature! <br></span>';
+    }
+
+
+
+
+
+} // SERVER REQUEST
 ?>
 
     <footer> <!-- START footer section //////// -->
         <ul>
-            <li
-            >copyright &copy; 
+            <li>Copyright &copy; 
                 <?php
                     $date_current = date('Y');
                     $date_created = 2022;
@@ -79,8 +106,12 @@
                     }
                 ?>
             </li>
-            <li><a href="https://validator.w3.org/nu/?doc=https://ellencodes.com/it262wn22/homeworks/p1TempConversion/tempconvert.php" target="_blank">HTML Validation</a></li>
-            <li><a href="https://jigsaw.w3.org/css-validator/validator?uri=https://ellencodes.com/it262wn22/homeworks/p1TempConversion/tempconvert.php" target="_blank">CSS Validation</a></li>
+            <li><a href="">(insert name?)</a></li>
+            <li><a href="">(insert name?)</a></li>
+            <li><a href="">(insert name?)</a></li>
+            <li><a href="">KC</a></li>
+            <small><li><a href="https://validator.w3.org/nu/?doc=https://ellencodes.com/it262wn22/homeworks/p1TempConversion/tempconvert.php" target="_blank">HTML Validation</a></li>
+            <li><a href="https://jigsaw.w3.org/css-validator/validator?uri=https://ellencodes.com/it262wn22/homeworks/p1TempConversion/tempconvert.php" target="_blank">CSS Validation</a></li></small>
         </ul>
 
     </footer>
