@@ -38,7 +38,7 @@
 
 <h1>Temperature Converter</h1>
 <form action="" method="post">
-    <fieldset class="fieldset">
+    <fieldset >
 
     <label for="temp">Enter The Temperature You Wish to Convert:</label>
     <input for="temp" name="temp" id="temp" type="number" value="">
