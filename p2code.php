@@ -62,10 +62,9 @@
     </fieldset>
 </form>
 
-
 ?>
 
-<footer> <!-- START footer section //////// -->
+    <footer> <!-- START footer section //////// -->
         <ul>
             <li
             >copyright &copy; 
