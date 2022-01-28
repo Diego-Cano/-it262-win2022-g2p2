@@ -85,7 +85,19 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
         $errorMsg .= '<span class="error">Please enter a temperature! <br></span>';
     }
 
+    if(isset(
+        $_POST['unit_1'],
+        $_POST['unit_2'],
+        $_POST['temp']
+    )) {
+        $unit_1 = $_POST['unit_1'];
+        $unit_2 = $_POST['unit_2'];
+        $converted_temp = 0; 
+        $temp = intval($_POST['temp']); 
 
+// add conversion if statements here
+
+} // end of isset if statment
 
 
 
