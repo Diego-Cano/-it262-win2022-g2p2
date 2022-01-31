@@ -152,17 +152,21 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
                     }
                 ?>
             </li>
-            <li><a href="">(insert name?)</a></li>
-            <li><a href="">(insert name?)</a></li>
-            <li><a href="">(insert name?)</a></li>
+            <li><a href="">Diego</a></li>
+            <li><a href="">Chih Wen Wang</a></li>
+            <li><a href="">E Brink</a></li>
             <li><a href="">KC</a></li>
-            <small><li><a href="https://validator.w3.org/nu/?doc=https://ellencodes.com/it262wn22/homeworks/p1TempConversion/tempconvert.php" target="_blank">HTML Validation</a></li>
-            <li><a href="https://jigsaw.w3.org/css-validator/validator?uri=https://ellencodes.com/it262wn22/homeworks/p1TempConversion/tempconvert.php" target="_blank">CSS Validation</a></li></small>
+            <li><small><a id="html-checker" href="#">HTML&nbsp;Validation</a>&nbsp;~&nbsp;<a href="https://jigsaw.w3.org/css-validator/check?uri=referer">CSS&nbsp;Validation</a></small></li>
         </ul>
 
     </footer>
 
 
 </div> <!--CLOSE WRAPPER--->
+
+<script>
+      //https://tinyurl.com/dynamic-html-checker
+      document.getElementById("html-checker").setAttribute("href","https://validator.w3.org/nu/?doc=" + location.href);
+</script>
 </body>
 </html>
